@@ -1,0 +1,98 @@
+html{
+  font-family: Montserrat;
+}
+
+
+.logo{
+  margin: 15px auto;
+display: block;
+width: 220px;
+}
+
+.recipe_list_item_selection {
+    background-color: #c7bebe;
+    height: 280px;
+    border-radius: 5px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.recipe_list_item_selection_caption {
+    background-color: #e7e7e7;
+    height: 140px;
+    bottom: -140px;
+    position: relative;
+    padding: 15px;
+}
+.recipe_list_item_selection_caption h3{
+  font-size: 1rem!important;
+}
+
+.recipe_list_item_selection_caption_head{
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe_list_item_selection_caption_content{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.5rem;
+}
+
+.recipe_list_item_selection_caption_content li{
+list-style: none;
+text-decoration: none;
+margin: 0;
+}
+
+.recipe_list_item_selection_caption_content ul{
+padding: 0px;
+width: 230%;
+}
+
+.recipe_list_item_selection_caption_head_temps{
+  font-weight: 600;
+}
+
+.form-control {
+    background-color: #e7e7e7!important;
+    padding: 15px!important;
+    border-right: none!important;
+}
+#basic-addon2 {
+    border-left: none!important;
+    background-color: #e7e7e7!important;
+}
+.filters{
+  display: flex;
+}
+.btn{
+  margin: 10px;
+  margin-left: 0px;
+  margin-bottom: 30px;
+}
+.btn.btn-primary.dropdown-toggle {
+    width: 160px;
+    color: white;
+    text-align: left;
+    height: 55px;
+}
+
+.appareil{
+  background-color: #68d9a4!important;
+  border-color: #68d9a4!important;
+}
+.ustensiles{
+  background-color: #ed6454!important;
+    border-color: #ed6454!important;
+}
+
+@media (max-width: 550px) {
+  .filters{
+    justify-content: center;
+  }
+
+  .btn{
+    margin: 10px;
+  }
+}

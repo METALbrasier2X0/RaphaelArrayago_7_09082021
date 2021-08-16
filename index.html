@@ -1,3 +1,199 @@
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c5866b9ccb.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <!-- <h1>Les petis plats</h1> -->
+    <img class="logo" src="15973932905401_logo.png" alt="Logo">
+   <div class="container" id="search-div">
+     <div class="row">
+       <div class="input-group mb-3">
+         <input type="text" class="form-control" placeholder="Rechercher un plat" aria-label="Rechercher un plat" aria-describedby="basic-addon2">
+         <div class="input-group-append">
+           <span class="input-group-text" id="basic-addon2"><i class="fas fa-search"></i></span>
+         </div>
+       </div>
+     </div>
+     <div class="row filters">
+       <div class="dropdown">
+         <input type="text" placeholder="Ingrédients" class="btn btn-primary dropdown-toggle ingredient" data-toggle="dropdown">
+         </input>
+         <div class="dropdown-menu">
+           <a class="dropdown-item" href="#">Link 1</a>
+           <a class="dropdown-item" href="#">Link 2</a>
+           <a class="dropdown-item" href="#">Link 3</a>
+         </div>
+       </div>
+
+       <div class="dropdown">
+         <input type="text" placeholder="Appareil" class="btn btn-primary dropdown-toggle appareil" data-toggle="dropdown">
+         </input>
+         <div class="dropdown-menu">
+           <a class="dropdown-item" href="#">Link 1</a>
+           <a class="dropdown-item" href="#">Link 2</a>
+           <a class="dropdown-item" href="#">Link 3</a>
+         </div>
+       </div>
+
+       <div class="dropdown">
+         <input type="text" placeholder="Ustensiles" class="btn btn-primary dropdown-toggle ustensiles" data-toggle="dropdown">
+         </input>
+         <div class="dropdown-menu">
+           <a class="dropdown-item" href="#">Link 1</a>
+           <a class="dropdown-item" href="#">Link 2</a>
+           <a class="dropdown-item" href="#">Link 3</a>
+         </div>
+       </div>
+
+     </div>
+     </div>
+     </div>
+   </div>
+
+    <div class="container" id="recipe_list">
+      <div class="row">
+
+          <div class="col-12 col-md-4 recipe_list_item">
+            <div class="recipe_list_item_selection">
+              <div class="recipe_list_item_selection_caption">
+                <div class="recipe_list_item_selection_caption_head">
+                  <h3>Limonade de Coco</h3> <p class="recipe_list_item_selection_caption_head_temps"><i class="far fa-clock"></i> 10 min</p>
+                </div>
+                <div class="recipe_list_item_selection_caption_content">
+                  <ul>
+                    <li><strong>Lait de coco</strong> : 400ml</li>
+                    <li><strong>Jus de citron</strong> : 2</li>
+                    <li><strong>Crème de coco</strong> : 2 cuillères à soupe</li>
+                    <li><strong>Sucre</strong> : 30 grammes</li>
+                    <li><strong>Glaçons</strong></li>
+                  </ul>
+                  <p>Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 recipe_list_item">
+            <div class="recipe_list_item_selection">
+              <div class="recipe_list_item_selection_caption">
+                <div class="recipe_list_item_selection_caption_head">
+                  <h3>Limonade de Coco</h3> <p class="recipe_list_item_selection_caption_head_temps"><i class="far fa-clock"></i> 10 min</p>
+                </div>
+                <div class="recipe_list_item_selection_caption_content">
+                  <ul>
+                    <li><strong>Lait de coco</strong> : 400ml</li>
+                    <li><strong>Jus de citron</strong> : 2</li>
+                    <li><strong>Crème de coco</strong> : 2 cuillères à soupe</li>
+                    <li><strong>Sucre</strong> : 30 grammes</li>
+                    <li><strong>Glaçons</strong></li>
+                  </ul>
+                  <p>Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 recipe_list_item">
+            <div class="recipe_list_item_selection">
+              <div class="recipe_list_item_selection_caption">
+                <div class="recipe_list_item_selection_caption_head">
+                  <h3>Limonade de Coco</h3> <p class="recipe_list_item_selection_caption_head_temps"><i class="far fa-clock"></i> 10 min</p>
+                </div>
+                <div class="recipe_list_item_selection_caption_content">
+                  <ul>
+                    <li><strong>Lait de coco</strong> : 400ml</li>
+                    <li><strong>Jus de citron</strong> : 2</li>
+                    <li><strong>Crème de coco</strong> : 2 cuillères à soupe</li>
+                    <li><strong>Sucre</strong> : 30 grammes</li>
+                    <li><strong>Glaçons</strong></li>
+                  </ul>
+                  <p>Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 recipe_list_item">
+            <div class="recipe_list_item_selection">
+              <div class="recipe_list_item_selection_caption">
+                <div class="recipe_list_item_selection_caption_head">
+                  <h3>Limonade de Coco</h3> <p class="recipe_list_item_selection_caption_head_temps"><i class="far fa-clock"></i> 10 min</p>
+                </div>
+                <div class="recipe_list_item_selection_caption_content">
+                  <ul>
+                    <li><strong>Lait de coco</strong> : 400ml</li>
+                    <li><strong>Jus de citron</strong> : 2</li>
+                    <li><strong>Crème de coco</strong> : 2 cuillères à soupe</li>
+                    <li><strong>Sucre</strong> : 30 grammes</li>
+                    <li><strong>Glaçons</strong></li>
+                  </ul>
+                  <p>Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 recipe_list_item">
+            <div class="recipe_list_item_selection">
+              <div class="recipe_list_item_selection_caption">
+                <div class="recipe_list_item_selection_caption_head">
+                  <h3>Limonade de Coco</h3> <p class="recipe_list_item_selection_caption_head_temps"><i class="far fa-clock"></i> 10 min</p>
+                </div>
+                <div class="recipe_list_item_selection_caption_content">
+                  <ul>
+                    <li><strong>Lait de coco</strong> : 400ml</li>
+                    <li><strong>Jus de citron</strong> : 2</li>
+                    <li><strong>Crème de coco</strong> : 2 cuillères à soupe</li>
+                    <li><strong>Sucre</strong> : 30 grammes</li>
+                    <li><strong>Glaçons</strong></li>
+                  </ul>
+                  <p>Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 recipe_list_item">
+            <div class="recipe_list_item_selection">
+              <div class="recipe_list_item_selection_caption">
+                <div class="recipe_list_item_selection_caption_head">
+                  <h3>Limonade de Coco</h3> <p class="recipe_list_item_selection_caption_head_temps"><i class="far fa-clock"></i> 10 min</p>
+                </div>
+                <div class="recipe_list_item_selection_caption_content">
+                  <ul>
+                    <li><strong>Lait de coco</strong> : 400ml</li>
+                    <li><strong>Jus de citron</strong> : 2</li>
+                    <li><strong>Crème de coco</strong> : 2 cuillères à soupe</li>
+                    <li><strong>Sucre</strong> : 30 grammes</li>
+                    <li><strong>Glaçons</strong></li>
+                  </ul>
+                  <p>Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="recipes.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
