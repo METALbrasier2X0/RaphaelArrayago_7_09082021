@@ -78,6 +78,10 @@ width: 230%;
     height: 55px;
 }
 
+.ingredient{
+  background-color: #0069d9!important;
+  border-color:#0069d9!important;
+}
 .appareil{
   background-color: #68d9a4!important;
   border-color: #68d9a4!important;
@@ -95,4 +99,16 @@ width: 230%;
   .btn{
     margin: 10px;
   }
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: none!important;
+}
+
+.dropdown-menu{
+  margin-top: -5px!important;
+}
+
+.dropdown-item{
+  color: white!important;
 }
