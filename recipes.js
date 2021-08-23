@@ -1703,7 +1703,7 @@ const recipes = [
             {
                 "ingredient": "Poudre d'amendes",
                 "quantity": 500,
-                "unit": "grammes"c
+                "unit": "grammes"
             },
             {
                 "ingredient": "Beurre",
