@@ -47,7 +47,16 @@ margin: 0;
 
 .recipe_list_item_selection_caption_content ul{
 padding: 0px;
-width: 230%;
+}
+.recipe_list_item_selection_caption_content p {
+    overflow: hidden;
+    max-height: 70px;
+    text-overflow: ellipsis;
+    width: 160px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
 }
 
 .recipe_list_item_selection_caption_head_temps{
@@ -59,6 +68,11 @@ width: 230%;
     padding: 15px!important;
     border-right: none!important;
 }
+
+.recipe_list_item_selection_caption_head_temps {
+    white-space: -moz-pre-space;
+}
+
 #basic-addon2 {
     border-left: none!important;
     background-color: #e7e7e7!important;
