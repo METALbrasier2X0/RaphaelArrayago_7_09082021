@@ -41,4 +41,4 @@ function Recipe_set(content){
 
 Recipe_set(recipes)
 
-// Algorythm
+// Algorythm de recherche
