@@ -125,4 +125,14 @@ padding: 0px;
 
 .dropdown-item{
   color: white!important;
+  display: block;
+    width: 156px!important;
+}
+.show{
+    width: max-content!important;
+    max-width: 800px;
+    display: flex!important;
+    flex-wrap: wrap!important;
+    top: 0px;
+    left: 0px;
 }
