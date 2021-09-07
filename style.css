@@ -120,6 +120,7 @@ padding: 0px;
 }
 
 .dropdown-menu{
+    transform: translate3d(0px, 65px, 0px)!important;
   margin-top: -5px!important;
 }
 
@@ -127,6 +128,8 @@ padding: 0px;
   color: white!important;
   display: block;
     width: 156px!important;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .show{
     width: max-content!important;

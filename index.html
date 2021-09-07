@@ -21,20 +21,17 @@
    <div class="container" id="search-div">
      <div class="row">
        <div class="input-group mb-3">
-         <input type="text" class="form-control" placeholder="Rechercher un plat" aria-label="Rechercher un plat" aria-describedby="basic-addon2">
+         <input id="search" type="text" class="form-control" placeholder="Rechercher un plat" aria-label="Rechercher un plat" aria-describedby="basic-addon2">
          <div class="input-group-append">
-           <span class="input-group-text" id="basic-addon2"><i id="search" class="fas fa-search"></i></span>
+           <span class="input-group-text" id="basic-addon2"><i id="search-icon" class="fas fa-search"></i></span>
          </div>
        </div>
      </div>
      <div class="row filters">
        <div class="dropdown">
-         <input type="text" placeholder="Ingrédients-input" id="ingredient-input" class="btn btn-primary dropdown-toggle ingredient" data-toggle="dropdown">
+         <input type="text" placeholder="Ingrédients" id="ingredient-input" class="btn btn-primary dropdown-toggle ingredient" data-toggle="dropdown">
          </input>
          <div id="ingredient" class="dropdown-menu ingredient">
-           <a class="dropdown-item" href="#">Link 1</a>
-           <a class="dropdown-item" href="#">Link 2</a>
-           <a class="dropdown-item" href="#">Link 3</a>
          </div>
        </div>
 
@@ -42,9 +39,6 @@
          <input type="text" placeholder="Appareil" id="appareil-input" class="btn btn-primary dropdown-toggle appareil" data-toggle="dropdown">
          </input>
          <div id="appareil" class="dropdown-menu appareil">
-           <a class="dropdown-item" href="#">Link 1</a>
-           <a class="dropdown-item" href="#">Link 2</a>
-           <a class="dropdown-item" href="#">Link 3</a>
          </div>
        </div>
 
