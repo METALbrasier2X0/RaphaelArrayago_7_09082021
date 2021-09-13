@@ -250,11 +250,7 @@ return source_result
 const plat = document.getElementById("search")
 
 
-plat.onchange = function() { autocomplete_name(recipes, plat.value); };
-plat.oninput = function() { autocomplete_name(recipes, plat.value); };
-
-
-function autocomplete_name(source_list, val){v
+function autocomplete_name(source_list, val){
 
 let complete_list = []
  for (i = 0; i < source_list.length; i++) {
@@ -302,11 +298,15 @@ function removetag(e){
   final_list();
 }
 
-function final_list() {
-
 let source_result = {}
 
-if (tag_list.length == 0) {Recipe_set(recipes); return tag_list}
+source_result = recipes
+
+function final_list() {
+
+
+if (tag_list.length == 0) {Recipe_set(recipes); return source_result}
+
 
  switch (tag_list[0].type) {
 
@@ -350,7 +350,12 @@ if (tag_list.length == 0) {Recipe_set(recipes); return tag_list}
      }
   
 } 
-
-
+console.log(source_result)
+return source_result
 
 }
+
+source_result = final_list();
+
+plat.onchange = function() {source_result = final_list(); console.log(source_result); autocomplete_name(source_result, plat.value); };
+plat.oninput = function() { source_result = final_list(); console.log(source_result);  autocomplete_name(source_result, plat.value); };
