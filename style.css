@@ -120,9 +120,29 @@ padding: 0px;
 }
 
 .dropdown-menu{
+    transform: translate3d(0px, 65px, 0px)!important;
   margin-top: -5px!important;
 }
 
 .dropdown-item{
   color: white!important;
+  display: block;
+    width: 156px!important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.show{
+    width: max-content!important;
+    max-width: 800px;
+    display: flex!important;
+    flex-wrap: wrap!important;
+    top: 0px;
+    left: 0px;
+}
+
+.btn{
+color: white;}
+
+#close_button{
+  margin: 7px;
 }

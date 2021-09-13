@@ -21,40 +21,32 @@
    <div class="container" id="search-div">
      <div class="row">
        <div class="input-group mb-3">
-         <input type="text" class="form-control" placeholder="Rechercher un plat" aria-label="Rechercher un plat" aria-describedby="basic-addon2">
+         <input id="search" type="text" class="form-control" placeholder="Rechercher un plat" aria-label="Rechercher un plat" aria-describedby="basic-addon2">
          <div class="input-group-append">
-           <span class="input-group-text" id="basic-addon2"><i class="fas fa-search"></i></span>
+           <span class="input-group-text" id="basic-addon2"><i id="search-icon" class="fas fa-search"></i></span>
          </div>
        </div>
      </div>
+     <div id="tags-list"></div>
      <div class="row filters">
        <div class="dropdown">
-         <input type="text" placeholder="Ingrédients" class="btn btn-primary dropdown-toggle ingredient" data-toggle="dropdown">
+         <input type="text" placeholder="Ingrédients" id="ingredient-input" class="btn btn-primary dropdown-toggle ingredient" data-toggle="dropdown">
          </input>
          <div id="ingredient" class="dropdown-menu ingredient">
-           <a class="dropdown-item" href="#">Link 1</a>
-           <a class="dropdown-item" href="#">Link 2</a>
-           <a class="dropdown-item" href="#">Link 3</a>
          </div>
        </div>
 
        <div class="dropdown">
-         <input type="text" placeholder="Appareil" class="btn btn-primary dropdown-toggle appareil" data-toggle="dropdown">
+         <input type="text" placeholder="Appareil" id="appareil-input" class="btn btn-primary dropdown-toggle appareil" data-toggle="dropdown">
          </input>
          <div id="appareil" class="dropdown-menu appareil">
-           <a class="dropdown-item" href="#">Link 1</a>
-           <a class="dropdown-item" href="#">Link 2</a>
-           <a class="dropdown-item" href="#">Link 3</a>
          </div>
        </div>
 
        <div class="dropdown">
-         <input type="text" placeholder="Ustensiles" class="btn btn-primary dropdown-toggle ustensiles" data-toggle="dropdown">
+         <input type="text" placeholder="Ustensiles" id="ustensiles-input" class="btn btn-primary dropdown-toggle ustensiles" data-toggle="dropdown">
          </input>
          <div id="ustensiles" class="dropdown-menu ustensiles">
-           <a class="dropdown-item" href="#">Link 1</a>
-           <a class="dropdown-item" href="#">Link 2</a>
-           <a class="dropdown-item" href="#">Link 3</a>
          </div>
        </div>
 
@@ -71,7 +63,6 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    truc
     <script src="recipes.js"></script>
     <script src="Algorythm.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
