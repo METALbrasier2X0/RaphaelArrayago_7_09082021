@@ -75,6 +75,21 @@ function addtag(name, type){
 
 }
 
+function autocomplete(source_list, val, set_function_list, set_function){
+
+var list = set_function_list(source_list)
+let complete_list = []
+ for (i = 0; i < list.length; i++) {
+if (list[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+
+complete_list.push(list[i])
+
+} }
+ set_function(complete_list);
+
+}
+
+
 
 function removetag(e){
 
@@ -137,7 +152,6 @@ if (tag_list.length == 0) {Recipe_set(recipes); return source_result}
      }
   
 } 
-console.log(source_result)
 return source_result
 
 }
@@ -150,28 +164,22 @@ return source_result
 const ustensiles_input = document.getElementById("ustensiles-input")
 let ustensiles = document.getElementById("ustensiles")
 
-
+ustensiles_input.oninput = function() { autocomplete(recipes, ustensiles_input.value, set_ustensil_list, set_ustensil ); };
 set_ustensil_list()
 
 function set_ustensil_list(){
 
-  let source_result = [];
+let source_result =[] ;
 
-  for (var i = 0; i < recipes.length; i++){
+const list_result = recipes.map(x => result = x.ustensils.map( y => source_result.push(y)));
 
-    let current_item = recipes[i]
-
-
-    for(let i = 0; i < current_item.ustensils.length; i++){
-      source_result.push(current_item.ustensils[i])
-    }
-  }
-  let uniquelist = [...new Set(source_result)];
+let uniquelist = [...new Set(source_result)];
 
   set_ustensil(uniquelist);
 
     return uniquelist;
 }
+
 
 function set_ustensil(uniquelist){
   ustensiles.innerHTML = "";
@@ -181,25 +189,125 @@ function set_ustensil(uniquelist){
     list_item_ustensils.setAttribute("onclick", 'set_value("'+uniquelist[i]+'", '+'ustensiles_input'+', '+'"ustensiles"'+' )' ); 
     ustensiles.appendChild(list_item_ustensils);
   }
-}
 
-ustensiles_input.oninput = function() { autocomplete(recipes, ustensiles_input.value, set_ustensil_list, set_ustensil ); };
+}
 
 function search_ustensil(source_list, name){
 
-  let source_result = [];
+ const source_result = source_list.filter(x => x.ustensils.indexOf(name) > -1 );
 
-  for (var i = 0; i < source_list.length; i++){
-
-    let current_item = source_list[i]
-
-    for(let i = 0; i < current_item.ustensils.length; i++){
-    if(current_item.ustensils[i] === name){
-      source_result.push(current_item)
-    }
-  }
-  Recipe_set(source_result)
-}
+ Recipe_set(source_result)
 
 return source_result
 }
+
+
+
+
+/*Set et Cherche appareil*/
+
+
+const appareil_input = document.getElementById("appareil-input")
+let appareil = document.getElementById("appareil")
+
+set_appareil_list()
+appareil_input.oninput = function() { autocomplete(recipes, appareil_input.value, set_appareil_list, set_appareil); };
+
+function set_appareil_list(){
+
+  let source_result = [];
+
+  const list_result = recipes.map(x => source_result.push(x.appliance));
+
+  let uniquelist = [...new Set(source_result)];
+  set_appareil(uniquelist);
+
+    return uniquelist;
+}
+
+function set_appareil(uniquelist){
+  appareil.innerHTML = "";
+  for (i = 0; i < uniquelist.length; i++) {
+    let list_item_appareil = document.createElement("a"); list_item_appareil.classList.add ("dropdown-item");
+    list_item_appareil.innerHTML = uniquelist[i];
+    list_item_appareil.setAttribute("onclick", 'set_value("'+uniquelist[i]+'", '+'appareil_input'+', '+'"appareil"'+' )' ); 
+    appareil.appendChild(list_item_appareil);
+  }
+}
+
+function search_appareil(source_list, name){
+
+const source_result = source_list.filter(x => x.appliance.indexOf(name) > -1 );
+
+Recipe_set(source_result)
+return source_result
+}
+
+
+/*Set et Cherche ingredient*/
+
+
+const ingredient_input = document.getElementById("ingredient-input")
+let ingredient = document.getElementById("ingredient")
+
+set_ingredient_list()
+ingredient_input.oninput = function() { autocomplete(recipes, ingredient_input.value, set_ingredient_list, set_ingredient); };
+
+function set_ingredient_list(){
+
+let source_result = [];
+
+const list_result = recipes.map(x => x.ingredients.forEach(y => source_result.push(y.ingredient)));
+
+  let uniquelist = [...new Set(source_result)];
+
+  set_ingredient(uniquelist);
+
+    return uniquelist;
+}
+
+function set_ingredient(uniquelist){
+  ingredient.innerHTML = "";
+  for (i = 0; i < uniquelist.length; i++) {
+    let list_item_ingredient = document.createElement("a"); list_item_ingredient.classList.add ("dropdown-item");
+    list_item_ingredient.innerHTML = uniquelist[i];
+    list_item_ingredient.setAttribute("onclick", 'set_value("'+uniquelist[i]+'", '+'ingredient_input'+', '+'"ingredient"'+' )' ); 
+    ingredient.appendChild(list_item_ingredient);
+  }
+}
+
+function search_ingredient(source_list, name){
+
+
+const source_result = source_list.filter(x => x.ingredients.find(z => z.ingredient == name));
+
+
+Recipe_set(source_result)
+
+return source_result
+}
+
+
+/*Set et Cherche repas par la barre principal*/
+
+
+
+const plat = document.getElementById("search")
+
+
+function autocomplete_name(source_list, val){
+
+let complete_list = []
+ for (i = 0; i < source_list.length; i++) {
+if (source_list[i].name.substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+
+complete_list.push(source_list[i])
+
+} }
+
+ Recipe_set(complete_list);
+
+}
+
+plat.onchange = function() {source_result = final_list(); console.log(source_result); autocomplete_name(source_result, plat.value); };
+plat.oninput = function() { source_result = final_list(); console.log(source_result);  autocomplete_name(source_result, plat.value); };
