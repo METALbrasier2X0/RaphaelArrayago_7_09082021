@@ -98,33 +98,37 @@ function removetag(e){
   tag_list = tag_list.filter(b => b.name !== value);
   e.parentNode.parentNode.removeChild(e.parentNode);
   final_list();
+  updated_result = recipes
+  set_ingredient_list()
+  set_ustensil_list()
+  set_appareil_list()
 }
 
-let source_result = {}
+let updated_result = {}
 
-source_result = recipes
+updated_result = recipes;
 
 function final_list() {
 
 
-if (tag_list.length == 0) {Recipe_set(recipes); return source_result}
+if (tag_list.length == 0) {Recipe_set(recipes); updated_result = recipes; return updated_result}
 
 
  switch (tag_list[0].type) {
 
     case 'ingredient':
     search_ingredient(recipes, tag_list[0].name)
-    source_result = search_ingredient(recipes, tag_list[0].name)
+    updated_result = search_ingredient(recipes, tag_list[0].name)
     break;
 
     case 'appareil':
     search_appareil(recipes, tag_list[0].name)
-    source_result = search_appareil(recipes, tag_list[0].name)
+    updated_result = search_appareil(recipes, tag_list[0].name)
     break;
 
      case 'ustensiles':
     search_ustensil(recipes, tag_list[0].name)
-    source_result = search_ustensil(recipes, tag_list[0].name)
+    updated_result = search_ustensil(recipes, tag_list[0].name)
     break;
      } 
 
@@ -133,26 +137,30 @@ if (tag_list.length == 0) {Recipe_set(recipes); return source_result}
        switch (tag_list[i].type) {
 
     case 'ingredient':
-    search_ingredient(source_result, tag_list[i].name)
-    source_result = search_ingredient(source_result, tag_list[i].name)
+    search_ingredient(updated_result, tag_list[i].name)
+    updated_result = search_ingredient(updated_result, tag_list[i].name)
     
     break;
 
     case 'appareil':
-    search_appareil(source_result, tag_list[i].name)
-    source_result = search_appareil(source_result, tag_list[i].name)
+    search_appareil(updated_result, tag_list[i].name)
+    updated_result = search_appareil(updated_result, tag_list[i].name)
 
     break;
 
      case 'ustensiles':
-    search_ustensil(source_result, tag_list[i].name)
-    source_result = search_ustensil(source_result, tag_list[i].name)
+    search_ustensil(updated_result, tag_list[i].name)
+    updated_result = search_ustensil(updated_result, tag_list[i].name)
 
     break;
      }
   
 } 
-return source_result
+
+set_ingredient_list()
+set_ustensil_list()
+set_appareil_list()
+return updated_result
 
 }
 
@@ -171,7 +179,7 @@ function set_ustensil_list(){
 
 let source_result =[] ;
 
-const list_result = recipes.map(x => result = x.ustensils.map( y => source_result.push(y)));
+const list_result = updated_result.map(x => result = x.ustensils.map( y => source_result.push(y)));
 
 let uniquelist = [...new Set(source_result)];
 
@@ -211,13 +219,13 @@ const appareil_input = document.getElementById("appareil-input")
 let appareil = document.getElementById("appareil")
 
 set_appareil_list()
-appareil_input.oninput = function() { autocomplete(recipes, appareil_input.value, set_appareil_list, set_appareil); };
+appareil_input.oninput = function() { autocomplete(updated_result, appareil_input.value, set_appareil_list, set_appareil); };
 
 function set_appareil_list(){
 
   let source_result = [];
 
-  const list_result = recipes.map(x => source_result.push(x.appliance));
+  const list_result = updated_result.map(x => source_result.push(x.appliance));
 
   let uniquelist = [...new Set(source_result)];
   set_appareil(uniquelist);
@@ -251,13 +259,13 @@ const ingredient_input = document.getElementById("ingredient-input")
 let ingredient = document.getElementById("ingredient")
 
 set_ingredient_list()
-ingredient_input.oninput = function() { autocomplete(recipes, ingredient_input.value, set_ingredient_list, set_ingredient); };
+ingredient_input.oninput = function() { autocomplete(updated_result, ingredient_input.value, set_ingredient_list, set_ingredient); };
 
 function set_ingredient_list(){
 
 let source_result = [];
 
-const list_result = recipes.map(x => x.ingredients.forEach(y => source_result.push(y.ingredient)));
+const list_result = updated_result.map(x => x.ingredients.forEach(y => source_result.push(y.ingredient)));
 
   let uniquelist = [...new Set(source_result)];
 
@@ -304,10 +312,17 @@ if (source_list[i].name.toLowerCase().indexOf(val.toLowerCase())  > -1 || source
 complete_list.push(source_list[i])
 
 } }
-
+  
+  updated_result = complete_list;
+  set_ingredient_list();
+  set_ustensil_list();
+  set_appareil_list();
  Recipe_set(complete_list);
 
+return updated_result ;
 }
 
 plat.onchange = function() {source_result = final_list(); console.log(source_result); autocomplete_name(source_result, plat.value); };
 plat.oninput = function() { source_result = final_list(); console.log(source_result);  autocomplete_name(source_result, plat.value); };
+
+
