@@ -98,7 +98,6 @@ function removetag(e){
   tag_list = tag_list.filter(b => b.name !== value);
   e.parentNode.parentNode.removeChild(e.parentNode);
   final_list();
-  updated_result = recipes
   set_ingredient_list()
   set_ustensil_list()
   set_appareil_list()
