@@ -58,7 +58,7 @@ function autocomplete(source_list, val, set_function_list, set_function){
 var list = set_function_list(source_list)
 let complete_list = []
  for (i = 0; i < list.length; i++) {
-if (list[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+if (list[i].toLowerCase().indexOf(val.toLowerCase())  > -1) {
 
 complete_list.push(list[i])
 
@@ -254,7 +254,8 @@ function autocomplete_name(source_list, val){
 
 let complete_list = []
  for (i = 0; i < source_list.length; i++) {
-if (source_list[i].name.substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+
+if (source_list[i].name.toLowerCase().indexOf(val.toLowerCase())  > -1 || source_list[i].description.toLowerCase().indexOf(val.toLowerCase())  > -1) {
 
 complete_list.push(source_list[i])
 
